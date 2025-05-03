@@ -4,13 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocojambo</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #playButton {
+            width: 100%;
+            height: 100%;
+            font-size: 2em;
+            background-color: #4CAF50; /* Зеленый цвет */
+            color: white; /* Белый текст */
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        #playButton:hover {
+            background-color: #45a049; /* Темнее при наведении */
+        }
+    </style>
 </head>
 <body>
-    <h1>Cocojambo</h1>
+    <button id="playButton">COCOJAMBO</button>
     
-    <audio autoplay loop>
+    <audio id="audio" loop>
         <source src="cocoj.mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудио.
     </audio>
+
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            document.getElementById('audio').play();
+        });
+    </script>
 </body>
 </html>
